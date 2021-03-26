@@ -20,7 +20,7 @@ const client = new tmi.Client({
 client.connect();
 
 client.api({
-	url: "https://id.twitch.tv/oauth2/token?client_id=ssj8kz2k3tss1y05ux9zqcpb6m83u0&client_secret=ejlc4l37humj0h906jof9gew21d4ek&grant_type=client_credentials&scope=user:edit:broadcast+user:edit+bits:read+chat:edit+chat:read+channel:read:redemptions+bits:read+channel:read:subscriptions+moderation:read",
+	url: "https://id.twitch.tv/oauth2/token?client_id=ssj8kz2k3tss1y05ux9zqcpb6m83u0&client_secret=qrjmvlnswxulsuvk94mf4hh5gvzrw3&code=hs4nqnwhh6amr6vecbu1yvjde611zq&grant_type=authorization_code&redirect_uri=https://localhost/",
 	method:'POST',
 }, function (err, res, body) {
 		console.log(body);

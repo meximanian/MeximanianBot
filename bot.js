@@ -18,8 +18,9 @@ function main()
 
 async function TwitchSystem()
 {
-  const clientId = 'ssj8kz2k3tss1y05ux9zqcpb6m83u0';
-  const clientSecret = 'ejlc4l37humj0h906jof9gew21d4ek';
+  const applicationData  = JSON.parse(await fs.readFile('./application.json', 'UTF-8'));
+  const clientId = applicationData.clientId;
+  const clientSecret = applicationData.clientSecret;
 
   const tokenData  = JSON.parse(await fs.readFile('./tokens.json', 'UTF-8'));
   const authProvider = new RefreshableAuthProvider(
@@ -189,6 +190,8 @@ function DiscordSystem(){
   var channelCheck = false;
   var kickedMembers = [];
   var lastGame;
+
+  StartUp();
 
   client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -465,7 +468,12 @@ function DiscordSystem(){
           .setTimestamp()
         msg.channel.send(embed);
       }
-  client.login('Nzg1MDQwODM4MDgxMzgwMzYz.X8yEQQ.0lXVURBTr08ROxdxigOjXBoLfmo');
+
+async function StartUp(){
+  const discordData = JSON.parse(await fs.readFile('./discord.json', 'UTF-8'));
+  client.login(discordData.token);
+}
+
 }
 
 main();
