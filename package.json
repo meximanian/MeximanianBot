@@ -1,0 +1,22 @@
+{
+  "name": "node-js",
+  "version": "0.3.0",
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  },
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.5.6",
+    "nodemon": "^2.0.7",
+    "twitch": "^4.3.3",
+    "twitch-auth": "^4.3.3",
+    "twitch-chat-client": "^4.3.3",
+    "twitch-pubsub-client": "^4.3.3",
+    "twitch-webhooks": "^4.3.3"
+  }
+}
